@@ -40,8 +40,74 @@ void A() {
     setfillcolor(RGB(192, 208, 241));
     floodfill(290, 90, RGB(145, 159, 188));
 }
+void N() {
+    POINT pts1[] = {
+        {311,64},{339,-23},{368,33},{380,69},
+    };
+    POINT pts2[] = {
+        {380,69},{408,-40}, {445,47},{432,94},
+    };
+    POINT pts3[] = {
+        {432,94},{427,128},{401,235},{358,100}
+    };
+    POINT pts4[] = {
+        {358,100},{345,189},{291,188},{311,64}
+    };
 
 
+    setlinecolor(RGB(170, 188, 146));
+    setlinestyle(PS_SOLID | PS_ENDCAP_ROUND, 6);
+
+    polybezier(pts1, 4);
+    polybezier(pts2, 4);
+    polybezier(pts3, 4);
+    polybezier(pts4, 4);
+    setfillcolor(RGB(207, 227, 192));
+    floodfill(394, 101, RGB(170, 188, 146));
+}
+
+void G() {
+    POINT pts1[] = {
+        {520,20}, {470, -10}, { 410,20 }, {380,110 }, 
+        { 410,135 },{470,200},{528,130},
+    };
+    POINT pts2[] = {
+        {470,50},{435,68},{435,86},{470,122}
+    };
+
+    POINT pts3[] = {
+        {470,50},{495,40} ,{520,45}, {520,20}
+    };
+
+    POINT pts4[] = {
+        {470,122},{492,100},{492,108}, {465,86}
+    };
+    POINT pts5[] = {
+        {465,86}, {490,70},{525,75}, {528,130}
+    };
+
+
+    setlinecolor(RGB(203, 131, 106));
+    setlinestyle(PS_SOLID | PS_ENDCAP_ROUND, 6);
+    polybezier(pts1, 7);
+    polybezier(pts2, 4);
+    polybezier(pts3, 4);
+    polybezier(pts4, 4);
+    polybezier(pts5, 4);
+    setfillcolor(RGB(240, 193, 163));
+    floodfill(394, 101, RGB(203, 131, 106));
+}
+
+void O() {
+    setlinecolor(RGB(223, 199, 153));
+    circle(560, 90, 78);
+    setlinestyle(PS_SOLID | PS_ENDCAP_ROUND, 6);
+    setfillcolor(RGB(237, 234, 183));
+    floodfill(582, 80, RGB(223, 199, 153));
+    setlinecolor(RGB(2, 1, 6));
+    line(544, 60, 542, 97);
+    line(544+39, 60-1, 542+39, 97-1);
+}
 
 
 void old_m() {
@@ -265,37 +331,83 @@ void bl() {
     eyeB(442, 225, 0.9);
 }
 
+void love() {
+    
+    setlinecolor(RGB(210, 141, 126)); 
+    setlinestyle(PS_SOLID | PS_ENDCAP_ROUND, 2);
+    POINT pts1[] = {
+         //{338,349},{329,340},{326,352},{336,362},
+        {343,352},{333,337},{326,353},{342,370}
+    };
+    POINT pts2[] = {
+        //{336,362},{351,348}, {343,340}, {338,349}
+        {342,370},{358,357},{358,337},{343,352}
+    };
+    polybezier(pts1, 4);
+    polybezier(pts2, 4);
+
+    setfillcolor(RGB(245, 174, 146));
+    floodfill(340, 352, RGB(210, 141, 126));
+}
+
+void grass() {
+    setlinecolor(RGB(55, 138, 142));
+    setlinestyle(PS_SOLID | PS_ENDCAP_ROUND, 3);
+    line(379, 322, 382, 307);
+    POINT pts1[] = {
+        {369,291},{368,300},{374,308},{382,307},
+        {384,297},{377,291},{369,291}
+    };
+    POINT pts2[] = {
+        {382,307},{390,313},{398,309},{404,306},
+        {398,299},{391,297},{382,307}
+    };
+    polybezier(pts1, 7);
+    polybezier(pts2, 7);
+    setfillcolor(RGB(55, 138, 142));
+    floodfill(377, 296, RGB(55, 138, 142));
+    floodfill(392,305, RGB(55, 138, 142));
+
+}
+
+
 void DANGO() {
 
     A();
     D();
+    O();
+    G();
+    N();
+    
 }
 
 void Daikazoku() {
 
     old_f();
-    Sleep(1000);
+    //Sleep(1000);
     old_m();
-    Sleep(1000);
+    //Sleep(1000);
     son();
-    Sleep(1000);
+    //Sleep(1000);
     mum();
-    Sleep(1000);
+    //Sleep(1000);
     dad();
-    Sleep(1000);
+    //Sleep(1000);
     baby();
-    Sleep(1000);
+    //Sleep(1000);
     Aqua();
-    Sleep(1000);
+    //Sleep(1000);
     bl();
-    Sleep(1000);
-    Alto(); Sleep(1000);
-    orange(); Sleep(1000);
-    purple(); Sleep(1000);
-    green(); Sleep(1000);
+    //Sleep(1000);
+    Alto(); //Sleep(1000);
+    orange(); //Sleep(1000);
+    purple(); //Sleep(1000);
+    green(); //Sleep(1000);
 
-    girl(); Sleep(1000);
-    boy(); Sleep(1000);
+    girl(); //Sleep(1000);
+    boy(); //Sleep(1000);
+    love();
+    grass();
 }
 
 
