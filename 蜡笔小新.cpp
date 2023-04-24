@@ -3,6 +3,9 @@
 #include<conio.h>
 #include<math.h>
 
+#include<mmsystem.h>//这是包含多媒体设备接口头文件
+#pragma comment(lib,"winmm.lib")//加载静态库
+
 #define PI 3.14/180
 // ceshi
 
@@ -68,7 +71,8 @@ void N() {
 
 void G() {
     POINT pts1[] = {
-        {520,20}, {470, -10}, { 410,20 }, {380,110 }, 
+        {520,20}, {490, 10}, { 450,15 }, {420,30 }, 
+        {},{},{},
         { 410,135 },{470,200},{528,130},
     };
     POINT pts2[] = {
@@ -89,13 +93,13 @@ void G() {
 
     setlinecolor(RGB(203, 131, 106));
     setlinestyle(PS_SOLID | PS_ENDCAP_ROUND, 6);
-    polybezier(pts1, 7);
-    polybezier(pts2, 4);
+    polybezier(pts1, 4);
+    /*polybezier(pts2, 4);
     polybezier(pts3, 4);
     polybezier(pts4, 4);
-    polybezier(pts5, 4);
+    polybezier(pts5, 4);*/
     setfillcolor(RGB(240, 193, 163));
-    floodfill(394, 101, RGB(203, 131, 106));
+    //floodfill(394, 101, RGB(203, 131, 106));
 }
 
 void O() {
@@ -372,42 +376,53 @@ void grass() {
 
 
 void DANGO() {
-
+    Sleep(700);
     A();
+    Sleep(1120);
     D();
+    Sleep(1120);
     O();
+    Sleep(1120);
     G();
+    Sleep(1120);
     N();
-    
+    Sleep(1120);
 }
 
 void Daikazoku() {
 
     old_f();
-    //Sleep(1000);
+    Sleep(1120);
     old_m();
-    //Sleep(1000);
+    Sleep(2700);
     son();
-    //Sleep(1000);
+    Sleep(1120);
     mum();
-    //Sleep(1000);
+    Sleep(1120);
     dad();
-    //Sleep(1000);
+    Sleep(1120);
     baby();
-    //Sleep(1000);
+    Sleep(1120);
     Aqua();
-    //Sleep(1000);
+    Sleep(1120);
     bl();
-    //Sleep(1000);
-    Alto(); //Sleep(1000);
-    orange(); //Sleep(1000);
-    purple(); //Sleep(1000);
-    green(); //Sleep(1000);
-
-    girl(); //Sleep(1000);
-    boy(); //Sleep(1000);
+    Sleep(1120);
+    Alto(); 
+    Sleep(1120);
+    orange(); 
+    Sleep(1120);
+    purple(); 
+    Sleep(1120);
+    green(); 
+    Sleep(1120);
+    girl(); 
+    Sleep(1120);
+    boy(); 
+    Sleep(1120);
     love();
+    Sleep(1120);
     grass();
+    Sleep(1120);
 }
 
 
@@ -416,7 +431,11 @@ void bg() {
         setfillcolor(RGB(250 - i / 40, 240 - i / 10, 236 - i / 10));
         solidcircle(350,225,  800-i);
     }
-    
+}
+
+void bkmusic() {
+    mciSendString(_T("open dango.mp3 alias bkmusic"), NULL, 0, NULL);//播放音乐
+    mciSendString(_T("play bkmusic repeat"), NULL, 0, NULL);//循环播放
 }
 int main()
 {
@@ -428,12 +447,14 @@ int main()
     //清除initgraph的默认黑色背景
     cleardevice();
     
-   
-    bg();
+    
+    /*bg();
+    bkmusic();
+
     DANGO();
-    Daikazoku();
-  
-   
+    Daikazoku();*/
+    //text();
+    G();
     // 等待用户关闭窗口
     getchar();
 
