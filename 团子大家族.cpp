@@ -384,52 +384,25 @@ void grass() {
 
 void DANGO() {
     Sleep(700);
-    A();
-    Sleep(1120);
-    D();
-    Sleep(1120);
-    O();
-    Sleep(1120);
-    G();
-    Sleep(1120);
-    N();
-    Sleep(1120);
+    void (*funs[])() = { A, D, O, G, N };
+    int time[] = { 1120 };
+    for (int i = 0; i < 5; i++) {
+        (*funs[i])();
+        Sleep(time[0]);
+    }
 }
 
 void Daikazoku() {
-
-    old_f();
-    Sleep(1120);
-    old_m();
-    Sleep(2700);
-    son();
-    Sleep(1120);
-    mum();
-    Sleep(1120);
-    dad();
-    Sleep(1120);
-    baby();
-    Sleep(1120);
-    Aqua();
-    Sleep(1120);
-    bl();
-    Sleep(1120);
-    Alto(); 
-    Sleep(1120);
-    orange(); 
-    Sleep(1120);
-    purple(); 
-    Sleep(1120);
-    green(); 
-    Sleep(1120);
-    girl(); 
-    Sleep(1120);
-    boy(); 
-    Sleep(1120);
-    love();
-    Sleep(1120);
-    grass();
-    Sleep(1120);
+    void (*funs[])() = { old_f ,old_m ,son, mum, dad, baby,
+        Aqua, bl, Alto, orange, purple, green, girl,boy, love, grass };
+    int time[16];
+    for (int i = 0; i < 16; i++) time[i] = 1120;
+    time[1] = 2700;
+    time[7] = 4000;
+    for (int i = 0; i < 16; i++) {
+        (*funs[i])();
+        Sleep(time[i]);
+    }
 }
 
 
@@ -446,7 +419,6 @@ void bkmusic() {
 }
 int main()
 {
-   
     //创建画布
     initgraph(700, 450);
     //设置背景色-白色
@@ -454,20 +426,16 @@ int main()
     //清除initgraph的默认黑色背景
     cleardevice();
     
-    
     bg();
     bkmusic();
-
     DANGO();
     Daikazoku();
-    //text();
-   
+    
     // 等待用户关闭窗口
     getchar();
 
     // 关闭图形界面
     closegraph();
-
     return 0;
 }
 

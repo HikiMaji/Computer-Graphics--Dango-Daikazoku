@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="蜡笔小新.cpp">
+    <ClCompile Include="团子大家族.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
